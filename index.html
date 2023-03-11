@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web页面录制与回放</title>
+    <link href="./src/css/InputRecorder.css" rel="stylesheet" />
+    <script src="./src/js/InputRecorder.js"></script>
+  </head>
+  <body class="input-recorder">
+    <div class="box">
+      <img src="./src/img/logo.png" width="100"/>
+      <h4>Web页面录制与回放<span>完整记录你的输入行为</span></h4>
+      <input type="text" id="input-box" placeholder="请输入内容……" />
+      <footer>
+        <button class="primary" id="record-button">录制</button>
+        <button class="success" id="playback-button" disabled>回放</button>
+        <div>请点击录制按钮，进行录制，点击回放按钮，即可回放用户操作。</br>通过刷新页面，结束所有操作……</div>
+        <a href="https://juejin.cn/post/7208885488803233852">文章链接</a>
+      </footer>
+    </div>
+
+    <script>
+      window.onload = function () {
+        // 获取输入元素、录制按钮和回放按钮的 DOM 元素，并传入 InputRecorder 类的构造函数创建一个新
+
+        const inputBox = document.getElementById("input-box");
+        const recordButton = document.getElementById("record-button");
+        const playbackButton = document.getElementById("playback-button");
+
+        const inputRecorder = new InputRecorder(
+          inputBox,
+          recordButton,
+          playbackButton
+        );
+      };
+    </script>
+  </body>
+</html>
